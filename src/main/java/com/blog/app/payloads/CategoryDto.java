@@ -1,5 +1,8 @@
 package com.blog.app.payloads;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,7 +13,13 @@ import lombok.Setter;
 public class CategoryDto{
 	
 	private Integer categoryId;	
-	private String categoryTitle;	
+	
+	@NotBlank
+	@Size(min=4, message = "minimum size of Categoty Title is 4")
+	private String categoryTitle;
+	
+	@NotBlank
+	@Size(min = 10, message = "minimum size of category description is 10")
 	private String categoryDescription;
 
 }
