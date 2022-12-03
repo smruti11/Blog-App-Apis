@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.blog.app.entities.Post;
 import com.blog.app.payloads.PostDto;
+import com.blog.app.payloads.PostResponse;
 
 public interface PostService {
 	
@@ -20,7 +21,7 @@ public interface PostService {
 	PostDto getPostById(Integer postId);
 	
 	// get all
-	List<PostDto> getAllPost();
+	PostResponse getAllPost(Integer pageNumber, Integer pageSize);
 	
 	//get all post by category
 	List<PostDto> getPostByCategory(Integer categoryId);
